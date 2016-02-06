@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - Embedded Media</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/night.css" id="theme">
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+				<section>
+					<h1><a href="http://d3js.org/">D3.js</a></h1>
+					
+				</section>
+
+				<section>
+					<h2>¿ Qué es un visualizador de datos ?</h2>
+					<p></p>
+				</section>
+
+				<section>
+					<h2>¿Qué es D3.js?</h2>
+					<p>D3.js (Data-Driven Documents)</p>
+				</section>
+
+				<section>
+					<h2><a href="http://bost.ocks.org/mike/"> Mike Bostock </a></h2>
+					<img src="https://pbs.twimg.com/profile_images/692556514947682305/iFKNAk5R_400x400.jpg">
+					<p><a href="https://twitter.com/mbostock?lang=es">@mbostock</a></p>
+				</section>
+
+				<section>
+					<h2>Fundamentos</h2>
+					<ul>
+						<li>HTML</li>
+						<li>DOM (Document Object Model)</li>
+						<li>CSS</li>
+						<li>JavaScript</li>
+						<li>SVG (Scalable Vector Graphics)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Sintáxis de cadena</h2>
+					<p>métodos separados por "<strong>.</strong>" ( Si como en jQuery )</p>
+				</section>
+				<section>
+				<h2>¿Cómo instalarlo?</h2>
+					<ul>
+						<li>NPM</li>
+						<li>Bower</li>
+						<li>CSS</li>
+						<li>Component</li>
+						<li>JSPM</li>
+						<li>Desde el <a href="https://github.com/mbostock/d3/releases">repositorio</a> </li>
+						<li>en la etiqueta Script con <STRONG>http://d3js.org/d3.v3.min.js</STRONG> </li>
+					</ul>
+				</section>
+				<section>
+				<h2>Datos</h2>
+				<p>D3.js puede trabajar con arreglos de números, caracteres u objetos o archivos
+				XML y CSV. <h3>JSON</h3></p>			
+				</section>
+
+				<section id="selectExample">
+					<h2> Primero seleccionó, luego existo </h2>
+				<pre><code class=" github">
+					var dataset = [ 5, 10, 15, 20, 25];
+					d3.select("#selectExample").selectAll("p")
+						.data(dataset)
+						.enter()
+						.append("p")
+						.text(function(d) { return "un nuevo p con dato de: " + d; });
+				</code>
+				</pre>
+				</section>
+
+				<section>
+					<h2> <a href="pokemon.html" target="_blank">Listos</a></h2>
+				</section>
+				
+				<section>
+					<h2> Dudas ??</h2>
+				</section>
+
+			</div>
+
+		</div>
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+		<script src="js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				transition: 'linear'
+			});
+
+		</script>
+
+	</body>
+</html>

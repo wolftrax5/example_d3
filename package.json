@@ -1,0 +1,27 @@
+{
+  "name": "example_d3",
+  "version": "1.0.0",
+  "description": "Proyecto para demostrar el funcionamiento de la libreria de d3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/wolftrax5/example_d3.git"
+  },
+  "keywords": [
+    "D3.js",
+    "JS",
+    "Css"
+  ],
+  "author": "Alejandro Medina Robles",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wolftrax5/example_d3/issues"
+  },
+  "homepage": "https://github.com/wolftrax5/example_d3#readme",
+  "dependencies": {
+    "d3": "^3.5.14"
+  }
+}

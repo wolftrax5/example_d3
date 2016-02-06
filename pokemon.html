@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+  <title>D3.js y pokemon</title>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script>
+
+    d3.json('http://pokeapi.co/api/v1/pokemon/?limit=15&offset=1',function (data) {
+
+      console.log(data);
+      //Maximo de Ataque 
+      var maxAttack = d3.max(data.objects, function (item) {
+        return item.attack;
+      });
+      //Maximo de defensa 
+      var maxDefense = d3.max(data.objects, function (item) {
+        return item.defense;
+      });
+      //escala y dominio 
+      var width = d3.scale.linear()
+                    .domain([0, maxDefense])
+                    .range([0, 99]);
+
+      //coloreado en base al numero de ataque
+      var background = d3.scale.linear()
+                         .domain([0, maxAttack])
+                         .range(["#F781D8", "#0B0B61"]);
+
+      d3.select('body')
+        .append('div')
+          .attr('class', 'chart')
+        .selectAll('div')
+        .data(data.objects)
+        .enter()
+        .append('div')
+          .attr('class', 'bar')
+          .style('width', function (item) {
+            return width(item.attack) + '%';
+          })
+          .style('background-color', function (item) {
+            return background(item.defense);
+          })
+          .text(function (item) {
+            return item.name +" Att: " + item.attack + " Def: "+item.defense ;
+          })
+          .append('img')
+          .attr("src", function (item) {
+              return "http://veekun.com/dex/media/pokemon/main-sprites/x-y/"+ item.national_id +".png"
+            })
+          ;
+    
+    });
+  </script>
+  <style type="text/css">
+    .chart {
+      font-family: sans-serif;
+    }
+    .bar {
+      color: white;
+      height: 87px;
+      line-height: 2em;
+      padding-left: 1%;
+      margin-bottom: 1px;
+    }
+    .pink{
+      background: #F781D8;
+      color: white;
+    }
+    .blue{
+     background: #0B0B61;
+     color: white;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <span class = "pink"> Menos Defensa </span>--<span class = "blue"> Mas Defensa </span>
+</div>
+</body>
+</html>
